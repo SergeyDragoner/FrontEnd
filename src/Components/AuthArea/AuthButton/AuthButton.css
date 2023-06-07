@@ -1,3 +1,13 @@
 .AuthButton{
     display: inline;
 }
+
+#logoutButton{
+    text-decoration: none;
+    color: black;
+}
+
+#logoutButton:hover{
+    text-decoration: underline;
+    font-size: 15px;
+}

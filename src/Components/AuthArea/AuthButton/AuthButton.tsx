@@ -30,7 +30,7 @@ function AuthButton(props : UserProps): JSX.Element {
             <span>
                 {props.user != undefined && <span>
                     {props.user.type === "GUEST" && <Link onClick={login} color="inherit" component="button" underline="hover">LOGIN</Link>}
-                    {props.user.type != "GUEST" && <Link onClick={logout}  color="inherit" component="button" underline="hover">LOGOUT</Link>}    
+                    {props.user.type != "GUEST" && <a id={"logoutButton"} onClick={logout}  color="inherit">LOGOUT</a>}
                 </span>}
             </span>
                 

@@ -1,7 +1,7 @@
 .Header {
     display: grid;
     grid-template-columns: 35% 30% 35%;
-    height: 35px;
+    height: 45px;
     background-color: #f1f1f1;
     padding: 0.2em;
 }
