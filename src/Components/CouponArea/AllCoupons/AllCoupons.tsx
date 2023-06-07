@@ -6,7 +6,6 @@ import customerService from "../../../Services/CustomerService";
 import notificationService from "../../../Services/NotificationService";
 import CouponCard from "../CouponCard/CouponCard";
 import "./AllCoupons.css";
-import {companyStore} from "../../../Redux/CompanyState";
 import {couponStore} from "../../../Redux/CouponState";
 
 function AllCoupons(): JSX.Element {
@@ -17,13 +16,18 @@ function AllCoupons(): JSX.Element {
         customerService.getCoupons()
         .then( c => setCoupons(c))
         .catch( err => notificationService.error(err));
-        couponStore.subscribe(() => {
+       const unsubscribe = couponStore.subscribe(() => {
             customerService.getCoupons().then(c => setCoupons(c)).catch(err => notificationService.error(err));
         });
+
+       return () => {
+           setCoupons([]);
+           unsubscribe();
+       }
         }, []
     )
 
-    // I created a Filter Model which gets it's properties from the form in the page to join the two filters together and make a singel Filter function
+    // I created a Filter Model which gets its properties from the form in the page to join the two filters together and make a singel Filter function
     async function filter(filters : FilterModel){
         await customerService.getCoupons()
         .then( allCoupons => {
