@@ -1,0 +1,42 @@
+.Header {
+    display: grid;
+    grid-template-columns: 35% 30% 35%;
+    height: 35px;
+    background-color: #f1f1f1;
+    padding: 0.2em;
+}
+
+.Header .title {
+    padding-top: 5px;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.Header>.top-right-button-block {
+    width: fit-content;
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Header .top-right-button-block {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .Header .right-button {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .Header .right-button:hover {
+    background-color: #ff9f3d;
+  }

@@ -1,0 +1,25 @@
+.CouponCardUpdate {
+    max-width: 400px;
+    height: 500px;
+    overflow-y: auto;
+    margin: 30px auto;
+}
+
+.submitChanges{
+    text-align: center;
+}
+
+.submitChanges > #saveButton{
+    border: solid 1px;
+    border-radius: 10px;
+    font-size:22px;
+    padding: 3px 15px 3px 15px;
+    background-color: #4caf50;
+    color: whitesmoke;
+}
+
+.submitChanges > #saveButton:hover{
+    font-size: 24px;
+    background-color: lightblue;
+    color: white;
+}
