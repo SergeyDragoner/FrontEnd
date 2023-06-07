@@ -6,6 +6,7 @@ import { AuthState, authStore } from "../../../Redux/AuthState";
 import authService from "../../../Services/AuthService";
 import notificationService from "../../../Services/NotificationService";
 import "./AuthButton.css";
+import * as http from "http";
 
 interface UserProps{
     user : UserModel
@@ -30,7 +31,7 @@ function AuthButton(props : UserProps): JSX.Element {
             <span>
                 {props.user != undefined && <span>
                     {props.user.type === "GUEST" && <Link onClick={login} color="inherit" component="button" underline="hover">LOGIN</Link>}
-                    {props.user.type != "GUEST" && <a id={"logoutButton"} onClick={logout}  color="inherit">LOGOUT</a>}
+                    {props.user.type != "GUEST" && <a href={"http://localhost:3000/home"} id={"logoutButton"} onClick={logout}  color="inherit">LOGOUT</a>}
                 </span>}
             </span>
                 
